@@ -36,3 +36,38 @@ document.getElementById('itinerary-form').addEventListener('submit', function(ev
     document.getElementById('date').value = '';
     document.getElementById('activity').value = '';
 });
+
+document.getElementById('itinerary-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const destination = document.getElementById('destination').value;
+    const startDate = document.getElementById('start-date').value;
+    const endDate = document.getElementById('end-date').value;
+    const activity = document.getElementById('activity').value;
+
+    // Your existing code for adding activities to the itinerary list goes here
+});
+
+//CODE to call Open AI
+
+document.getElementById('generate-itinerary').addEventListener('click', function() {
+    const requestText = 'Generate a three day itinerary - I am going to Tokyo from April 23 to April 26th, choose top five visited places, make sure that we can eat at top five restaurants for dinner around 6pm, and I am happy to have lunch for a convenience store, and I would like to start my day 6:00am';
+
+    fetch('YOUR_API_URL', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            text: requestText
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // Process the data returned from the API and update the itinerary list accordingly
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
