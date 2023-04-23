@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Creator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Travel Itinerary Creator</h1>
+    </header>
+    <main>
+        <section class="form-container">
+            <form id="itinerary-form">
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" required>
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                <label for="activity">Activity:</label>
+                <input type="text" id="activity" required>
+                <button type="submit">Add</button>
+            </form>
+        </section>
+        <section class="itinerary-container">
+            <h2>Your Itinerary</h2>
+            <ul id="itinerary-list">
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
